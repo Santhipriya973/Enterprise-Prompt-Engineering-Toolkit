@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+
+.env
+backend/.env
+
+.streamlit/
+
+frontend/
+
+*.db-journal
+
+.vscode/
