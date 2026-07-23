@@ -52,23 +52,22 @@ def create_prompt(
     db.add(new_prompt)
     db.commit()
     db.refresh(new_prompt)
-
 # Save Version 1
 
-version = models.PromptVersion(
-    prompt_id=new_prompt.id,
-    version=1,
-    title=new_prompt.title,
-    role=new_prompt.role,
-    context=new_prompt.context,
-    task=new_prompt.task,
-    rules=new_prompt.rules,
-    output_format=new_prompt.output_format,
-    content=new_prompt.content
+    version = models.PromptVersion(
+        prompt_id=new_prompt.id,
+        version=1,
+        title=new_prompt.title,
+         role=new_prompt.role,
+          context=new_prompt.context,
+          task=new_prompt.task,
+           rules=new_prompt.rules,
+          output_format=new_prompt.output_format,
+         content=new_prompt.content
 )
+    db.add(version)
+    db.commit()
 
-db.add(version)
-db.commit()
     return {
         "message": "Prompt saved successfully!",
         "id": new_prompt.id,
